@@ -1,0 +1,120 @@
+.icons {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+
+}
+.home .container{
+    margin-top: 20vh;
+}
+.icons a:hover {
+    transform: scale(0.85);
+}
+
+.icons a {
+    color: var(--text-black-900);
+    transition: all 0.3s ease;
+}
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    color: var(--text-black-900);
+}
+
+.home .home-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+h3.hello {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+h3.hello span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ec1839;
+}
+
+h3.my-profession {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.typing {
+    color: #ec1839;
+}
+
+.home .home-info p {
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+
+.home .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+}
+
+.home-img::after {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    right: 1px;
+    bottom: -40px;
+    border-bottom: 10px solid #ec1839;
+    border-right: 10px solid #ec1839;
+}
+
+.home-img::before {
+    content: '';
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 0px;
+    top: -70px;
+    border-top: 10px solid #ec1839;
+    border-left: 10px solid #ec1839;
+
+}
+
+.home .home-img img {
+    height: 400px;
+    width: 300px;
+/*     margin: auto; */
+    border-radius: 5px;
+    margin-top: -5vh;
+}
+.home-info .btn{
+    background: #ec1839;
+}
+
+
+@media (max-width:1024px) {
+    .home .home-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .home .container .row .home-info{
+        padding-right: 50px;
+    }
+    .home .home-img {
+        display: none;
+    }
+    .home{
+        width: 100%;
+    }
+    .home .home-info{
+        width: 95%;
+    }
+}

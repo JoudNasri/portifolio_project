@@ -1,0 +1,275 @@
+.moon {
+    cursor: pointer;
+    width: 20px;
+}
+
+.dark .aside {
+    background-color: #000;
+    color: #fff;
+}
+
+
+
+
+
+
+
+.aside {
+    width: 270px;
+    background: var(--bg-black-100);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px;
+    height: 100%;
+    border-right: 1px solid var(--bg-black-50);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.aside .logo {
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    text-transform: capitalize;
+}
+
+.aside.active .logo a,
+.aside.active .logo span {
+    font-size: 25px;
+}
+
+.aside .logo span {
+    color: #ec1839;
+}
+
+.aside .logo a {
+    color: var(--text-black-900);
+    font-weight: 700;
+    padding: 15px 20px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    position: relative;
+}
+
+.aside .logo a span {
+    font-family: 'Clicker Script', cursive;
+    font-size: 40px;
+}
+
+.aside .logo a::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid #ec1839;
+    border-left: 5px solid #ec1839;
+    bottom: 0;
+    left: 0;
+}
+
+.aside .logo a::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid #ec1839;
+    border-right: 5px solid #ec1839;
+    top: 0;
+    right: 0;
+}
+
+.aside .nav {
+    margin-top: 50px;
+}
+
+.aside .nav i li {
+    margin-bottom: 30px;
+    display: block;
+}
+
+.aside .nav i li a {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    color: var(--text-black-900);
+    padding: 5px 15px;
+    border-bottom: 1px solid var(--bg-black-50);
+}
+
+.aside.active .nav li a {
+    border-bottom: none;
+}
+
+.aside .nav li a:hover {
+    color: #ec1839;
+    transition: 0.3s all;
+}
+
+.aside .nav li a.active {
+    color: #ec1839;
+    transition: 0.3s all;
+}
+
+.nav li.active {
+    color: #ec1839;
+}
+
+.aside .nav li a i {
+    margin-right: 15px;
+}
+
+.burgerContainer {
+    content: '';
+    background-color: #ec1839;
+    position: absolute;
+    right: -1rem;
+    top: calc(9rem / 1.15);
+    width: 35px;
+    height: 35px;
+    border-radius: 2rem;
+    z-index: 1;
+
+    .burgerTrigger {
+        content: '';
+        width: 35px;
+        height: 35px;
+        background-color: #ec1839;
+        cursor: pointer;
+        z-index: 6;
+        opacity: 0;
+        position: relative;
+    }
+
+    .burgerMenu {
+        content: '';
+        position: relative;
+        z-index: 1;
+        width: 20px;
+        height: 3px;
+        border-radius: 2rem;
+        bottom: calc(35px / 2);
+        left: 0.45rem;
+        transition: 0.5s all;
+    }
+
+    .burgerMenu::after {
+        content: '';
+        background-color: white;
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        border-radius: 2rem;
+        top: 0.4rem;
+        transform: translateY(-0.4rem) rotate(45deg);
+        transition: 0.5s all;
+    }
+
+    .burgerMenu::before {
+        content: '';
+        background-color: white;
+        position: absolute;
+        width: 20px;
+        height: 3px;
+        border-radius: 2rem;
+        top: -0.4rem;
+        transform: translateY(0.4rem) rotate(-45deg);
+        transition: 0.5s all;
+    }
+}
+
+.burgerContainer::after {
+    content: '';
+    position: absolute;
+    right: 35px;
+    top: 1.2rem;
+    z-index: 0;
+    width: calc(6rem + 15rem);
+    background-color: #ec1839;
+    height: 2px;
+    transition: 0.5s all;
+}
+
+.aside.active {
+    width: 5rem;
+
+    .logo.active {
+        a {
+            opacity: 0;
+        }
+    }
+
+    .burgerContainer.active {
+        transition: 0.5s all;
+
+        .burgerMenu {
+            background-color: white;
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::before {
+            transform: translateY(0rem) rotate(0deg);
+            transition: 0.5s all;
+        }
+
+        .burgerMenu::after {
+            transform: translateY(0rem) rotate(0deg);
+            transition: 0.5s all;
+        }
+    }
+
+    .nav i li {
+        opacity: 0;
+    }
+
+    .nav #icon {
+        transition: 0.5s all;
+    }
+
+    .nav i li {
+        transition: 0.5s all;
+    }
+
+    .nav #icon {
+        cursor: pointer;
+    }
+}
+
+.nav i {
+    display: flex;
+    gap: 15px;
+}
+
+.aside.active .logo a::before {
+    display: none;
+}
+
+.aside.active .logo a::after {
+    display: none;
+}
+
+ul {
+    width: 100%;
+}
+
+ul li {
+    width: 100%;
+}
+
+.aside .nav i li a {
+    letter-spacing: 5px;
+}
+
+@media (max-width:1024px) {
+    .aside.active {
+        width: 4.5rem;
+    }
+
+    .aside .logo a {
+        font-size: 17px;
+        top: -20px;
+    }
+}
